@@ -1,0 +1,12 @@
+{
+  "name": "collectRainfall",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nbb3210/collectRainfall.git",
+  "author": "nbb3210",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^4.0.0"
+  }
+}
