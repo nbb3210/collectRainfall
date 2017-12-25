@@ -27,7 +27,14 @@ function collectData(date) {
   const radio = (dateTime - startTime) / (endTime - startTime) * 100
   readline.clearLine(process.stdout, 0)
   readline.cursorTo(process.stdout, 0)
-  process.stdout.write(`${date}, ${radio.toFixed(2)}%`)
+  /* readline.moveCursor(process.stdout, `${date}, ${radio.toFixed(2)}%`.length * -1) */
+  let fill = Array(parseInt(radio/2))
+  fill.fill('█')
+  let fillStr = fill.join('')
+  let empty = Array(50 - parseInt(radio/2))
+  empty.fill('░')
+  let emptyStr = empty.join('')
+  process.stdout.write(`${date} ${fillStr}${emptyStr} ${radio.toFixed(2)}%`)
   if (endTime <= dateTime) {
     writeStream.end()
     console.log('\n Finish collecting the data...')
